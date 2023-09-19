@@ -28,3 +28,4 @@ found_pinecone_docs = vectorstore.similarity_search(query)
 
 # Establish a question and answer chain with the given llm and with the found pinecone docs, submit our query.
 chain = load_qa_chain(llm, chain_type='stuff')
+print(chain.run(input_documents=found_pinecone_docs, question=query))
